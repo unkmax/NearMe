@@ -1,0 +1,38 @@
+{
+    "response.success": {
+        "code": 200,
+        "message": "Ok"
+    },
+    "client.bad.request": {
+        "code": 400,
+        "message": "Bad Request"
+    },
+    "client.unauthorized": {
+        "code": 401,
+        "message": "Unauthorized"
+    },
+    "client.forbidden": {
+        "code": 403,
+        "message": "Forbidden"
+    },
+    "client.not.found": {
+        "code": 404,
+        "message": "Not Found"
+    },
+    "client.request.timeout": {
+        "code": 408,
+        "message": "Request Timeout"
+    },
+    "server.internal.error": {
+        "code": 500,
+        "message": "Internal Server Error"
+    },
+    "server.not.implemented": {
+        "code": 501,
+        "message": "Not Implemented"
+    },
+    "server.unavailable": {
+        "code": 503,
+        "message": "Service Unavailable"
+    }
+}

@@ -15,24 +15,23 @@ const dbconfig = {
   multipleStatements: true,
 };
 
-let pool = mysql.createPool(dbconfig);;
+let pool = mysql.createPool(dbconfig);
 
 module.exports = {
-
   /**
    * Check Can Connect to Database
    * @param {*} callback
    */
   connect: (callback) => {
     pool.getConnection((err, conn) => {
-			if(err) {
-				logger.warn("Mysql connection error");
-				callback(true);
-			} else {
-				logger.info(`${env.MYSQL_DATABASE} connected`);
-				callback(false);
-			}
-		});
+      if (err) {
+        logger.warn("Mysql connection error");
+        callback(true);
+      } else {
+        logger.info(`${env.MYSQL_DATABASE} connected`);
+        callback(false);
+      }
+    });
   },
 
   /**
@@ -47,8 +46,8 @@ module.exports = {
       } else {
         conn.query(sqlQuery, (err, result) => {
           callback(err, result);
-				});
-				conn.release();
+        });
+        conn.release();
       }
     });
   },
@@ -56,13 +55,13 @@ module.exports = {
   executeWithData: (sqlQuery, data, callback) => {
     pool.getConnection((err, conn) => {
       if (err) {
-        callback(false, null);
+        callback(err.code, null);
       } else {
         conn.query(sqlQuery, data, (err, result) => {
           callback(err, result);
-				});
-				conn.release();
+        });
+        conn.release();
       }
     });
-  }
+  },
 };

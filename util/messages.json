@@ -1,0 +1,8 @@
+{
+    "success": "Success",
+    "failed": "Failed",
+    "email.invalid": "Invalid Email",
+    "password.invalid": "Invalid Password",
+    "user.not.found": "User Not Found",
+    "user.incorrect.credentials":"Incorrect Credentials"
+}
